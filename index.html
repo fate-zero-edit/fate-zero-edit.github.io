@@ -42,6 +42,16 @@
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+	    tex2jax: {
+	        inlineMath: [['$','$'], ['\\(','\\)']],
+	        processEscapes: true
+	    }
+	});
+    </script>
+
   <script src="static/js/index.js"></script>
 </head>
 <body>
@@ -135,23 +145,64 @@
   </div>
 </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+<section class="hero">
+<div class="marquee-wrapper">
+		<div class="marquee-block">
+			<div class="marquee-inner to-left">
+				<span>
+					<div class="marquee-item">
+            <img src="static/images/cat_to_black_cat.gif">
+						<p class="text-white">Cat -> Black Cat</p>
+					</div>
+					<div class="marquee-item">
+						<img src="static/images/surf.gif">
+						<p class="text-white"> + Ukiyo-e Style </p>
+					</div>
+					<div class="marquee-item">
+						<img src="static/images/cat_to_black_cat.gif">
+						<p class="text-white">Cat -> Black Cat</p>
+					</div>
+					<div class="marquee-item">
+						<img src="static/images/cat_to_black_cat.gif">
+						<p class="text-white">Cat -> Black Cat</p>
+					</div>
+					<div class="marquee-item">
+						<img src="static/images/cat_to_black_cat.gif">
+						<p class="text-white">Cat -> Black Cat</p>
+					</div>
+          <div class="marquee-item">
+						<img src="static/images/cat_to_black_cat.gif">
+						<p class="text-white">Cat -> Black Cat</p>
+					</div>
+				</span>
+				<span>
+					<div class="marquee-item">
+            <img src="static/images/cat_to_black_cat.gif">
+						<p class="text-white">Cat -> Black Cat</p>
+					</div>
+					<div class="marquee-item">
+						<img src="static/images/surf.gif">
+						<p class="text-white"> + Ukiyo-e Style </p>
+					</div>
+					<div class="marquee-item">
+						<img src="static/images/cat_to_black_cat.gif">
+						<p class="text-white">Cat -> Black Cat</p>
+					</div>
+					<div class="marquee-item">
+						<img src="static/images/cat_to_black_cat.gif">
+						<p class="text-white">Cat -> Black Cat</p>
+					</div>
+					<div class="marquee-item">
+						<img src="static/images/cat_to_black_cat.gif">
+						<p class="text-white">Cat -> Black Cat</p>
+					</div>
+          <div class="marquee-item">
+						<img src="static/images/cat_to_black_cat.gif">
+						<p class="text-white">Cat -> Black Cat</p>
+					</div>
+				</span>
     </div>
-  </div>
-</section>
-<!-- End teaser video -->
+  </section>
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -161,7 +212,11 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            The diffusion-based generative models have achieved remarkable success in text-based image generation. 
+            However, since it contains enormous randomness in generation progress, it is still challenging to apply such models for real-world visual content editing, especially in videos. 
+In this paper, we propose <i style="color:blueviolet">FateZero</i>, a zero-shot text-based editing method on real-world videos without per-prompt training or use-specific mask. 
+To edit videos consistently, we propose several techniques based on the pre-trained models. Firstly, in contrast to the straightforward DDIM inversion technique, our approach captures intermediate attention maps during inversion, which effectively retain both structural and motion information. These maps are directly fused in the editing process rather than generated during denoising. To further minimize semantic leakage of the source video, we then fuse self-attentions with a blending mask obtained by cross-attention features from the source prompt. Furthermore, we have implemented a reform of the self-attention mechanism in denoising UNet by introducing spatial-temporal attention to ensure frame consistency.
+Yet succinct, our method is the first one to show the ability of zero-shot text-driven video style and local attribute editing from the trained text-to-image model. We also have a better zero-shot shape-aware editing ability based on the <a href="https://tuneavideo.github.io/">text-to-video model</a>.  Extensive experiments demonstrate our superior temporal consistency and editing capability than previous works.
           </p>
         </div>
       </div>
@@ -170,6 +225,27 @@
 </section>
 <!-- End paper abstract -->
 
+
+<!-- Paper abstract -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-2">Pipeline</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/pipeline.gif" />
+        </div>
+        <p class="content has-text-justified">
+          Our input is the user-provided source prompt $p_{src}$,  target prompt $p_{edit}$ and clean latent $z=\{z^1,z^2, ... z^n\}$ encoded from input source video $x=\{x^1,x^2, ... x^n\}$ with number frames $n$ in a video sequence.
+          <br/><b>left:</b> we first invert the video using DDIM inversion pipeline into noisy latent $z_T$ using the source prompt $p_{src}$ and an inflated 3D U-Net $\varepsilon_\theta$. During each inversion timestep $t$, we store both spatial-temporal self-attention maps $s^{src}_t$ and cross-attention maps $c^{src}_t$.
+         At the editing stage of the DDIM denoising, we denoise the latent $z_T$ back to clean image $\hat{z}_0$ conditioned on target prompt $p_{edit}$. At each denoising timestep $t$ , we fuse the attention maps ($s^{edit}_t$ and $c^{edit}_t$) in $\varepsilon_\theta$ with stored attention map ($s^{src}_t$, $c^{src}_t$) using the proposed Attention Blending Block. 
+         <br/><b>Right</b>: Specifically, we replace the cross-attention maps $c^{edit}_t$ of un-edited words~(e.g., road and countryside) with source maps $c^{src}_t$ of them. In addition, we blend the self-attention map during inversion $s^{src}_t$ and editing $s^{edit}_t$ with an adaptive spatial mask obtained from cross-attention $c^{src}_t$, which represents the areas that the user wants to edit. 
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
 
 <!-- Image carousel -->
 <section class="hero is-small">
