@@ -359,7 +359,7 @@
             The diffusion-based generative models have achieved remarkable success in text-based image generation. 
             However, since it contains enormous randomness in generation progress, it is still challenging to apply such models for real-world visual content editing, especially in videos. 
 In this paper, we propose <i style="color: #eb002a">FateZero</i>, a zero-shot text-based editing method on real-world videos without per-prompt training or use-specific mask. 
-To edit videos consistently, we propose several techniques based on the pre-trained models. Firstly, in contrast to the straightforward DDIM inversion technique, our approach captures intermediate attention maps during inversion, which effectively retain both structural and motion information. These maps are directly fused in the editing process rather than generated during denoising. To further minimize semantic leakage of the source video, we then fuse self-attentions with a blending mask obtained by cross-attention features from the source prompt. Furthermore, we have implemented a reform of the self-attention mechanism in denoising UNet by introducing spatial-temporal attention to ensure frame consistency.
+To edit videos consistently, we propose several techniques based on the pre-trained models. Firstly, in contrast to the straightforward DDIM inversion technique, our approach captures intermediate attention maps during inversion using source prompt<sup>2</sup>, which effectively retain both structural and motion information. These maps are directly fused in the editing process rather than generated during denoising. To further minimize semantic leakage of the source video, we then fuse self-attentions with a blending mask obtained by cross-attention features from the source prompt. Furthermore, we have implemented a reform of the self-attention mechanism in denoising UNet by introducing spatial-temporal attention to ensure frame consistency.
 Yet succinct, our method is the first one to show the ability of zero-shot text-driven video style and local attribute editing from the trained text-to-image model. We also have a better zero-shot shape-aware editing ability based on the <a href="https://tuneavideo.github.io/">One-shot text-to-video model</a>. Extensive experiments demonstrate our superior temporal consistency and editing capability than previous works.
           </p>
         </div>
@@ -520,7 +520,7 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
 <section class="section hero is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Video Shape-Aware Editing Using Tune-A-Video Checkpoint<sup>*,2</sup></h2>
+      <h2 class="title is-3">Video Shape-Aware Editing Using Tune-A-Video Checkpoint<sup>*,3</sup></h2>
       <div class="marquee-item">
         <video onloadstart="this.playbackRate = 0.75;" poster="" id="video1" autoplay muted loop height="100%">
           <source src="static/videos/17_car_posche_01_concat_result.mp4"
@@ -647,8 +647,9 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
     <div class="container is-max-desktop content">
       
     <small>1. We also use Tune-A-Video checkpoints for shape-aware editing, the results are marked as *. </small> <br/>
+    <small>2. For better visualization, we only show the edited word in this page. Please check our paper and code for the whole source prompt. </small> <br/>
 
-    <small>2. Our method do not requires to train on the Tune-A-Video Model. </small>
+    <small>3. Our method do not requires to train on the Tune-A-Video Model. </small>
     </div>
   </section>
 
