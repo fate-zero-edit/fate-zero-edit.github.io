@@ -137,7 +137,7 @@
 </section>
 
 <section class="hero">
-  <p class="trdl">TL;DR: Editing your video via pretrained Stable Diffusion<sup>1</sup> model without training.</p>
+  <p class="trdl">TL;DR: Editing<sup>1</sup> your video via pretrained Stable Diffusion<sup>2</sup> model without training.</p>
   <div class="is-max-desktop">
     <div class="marquee-wrapper">
         <div class="marquee-block">
@@ -461,14 +461,14 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
           <source src="static/videos/16_sq_eat_02_concat_result.mp4"
             type="video/mp4">
           </video>
-        <p class="text-white" style="font-size: 18px;" > squirrel, carrot ➜ <c> rabbit, eggplant</c> </p>
+        <p class="text-white" style="font-size: 16px;" >squirrel, carrot ➜ <c> rabbit, eggplant</c> </p>
       </div>
       <div class="marquee-item">
         <video onloadstart="this.playbackRate = 0.75;" poster="" id="video1" autoplay muted loop height="100%">
           <source src="static/videos/16_sq_eat_03_concat_result.mp4"
             type="video/mp4">
           </video>
-        <p class="text-white" style="font-size: 18px;" > squirrel, carrot ➜ <c> robot mouse, screwdriver </c> </p>
+        <p class="text-white" style="font-size: 16px;" > squirrel, carrot ➜ <c> robot mouse, screwdriver</c> </p>
       </div>
       <div class="marquee-item">
         <video onloadstart="this.playbackRate = 0.75;" poster="" id="video1" autoplay muted loop height="100%">
@@ -547,7 +547,7 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
           <source src="static/videos/19_man_wonder_02_concat_result.mp4"
             type="video/mp4">
           </video>
-        <p class="text-white" style="font-size: 18px;">A man ➜ <c>A Wonder Woman ... With cowboy hat <sup>*</sup></c> </p>
+        <p class="text-white" style="font-size: 18px;">A man ➜ <c>A Wonder Woman, With cowboy hat<sup>*</sup></c> </p>
       </div>
       <div class="marquee-item">
         <video onloadstart="this.playbackRate = 0.75;" poster="" id="video1" autoplay muted loop height="100%">
@@ -631,7 +631,6 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
 
 
 
-
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
@@ -645,11 +644,11 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
 <section class="section">
   <div class="hero-body">
     <div class="container is-max-desktop content">
-      
-    <small>1. We also use Tune-A-Video checkpoints for shape-aware editing, the results are marked as *. </small> <br/>
-    <small>2. For better visualization, we only show the edited word in this page. Please check our paper and code for the whole source prompt. </small> <br/>
-
-    <small>3. Our method do not requires to train on the Tune-A-Video Model. </small>
+    <h2 class="title">Explaination</h2>
+    <small>1. For better visualization, we only show the edited word in this page. Please check our paper and code for the whole source prompt. </small> <br/>
+    <small>2. We use Tune-A-Video checkpoints for shape-aware editing, the results are marked as *. </small> <br/>
+    
+    <small>3. Our method do not require to train on the Tune-A-Video Model. </small>
     </div>
   </section>
 
@@ -658,7 +657,6 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
             This page was built using the <a href="https://github.com/vinthony/project-page-template">modification version</a> of <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> from <a href="https://github.com/vinthony">vinthony</a>.
             You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
@@ -678,8 +676,5 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
 
     <!-- End of Statcounter Code -->
 
-    <script type="text/javascript">
-      document.querySelector('video').playbackRate = 0.5;
-    </script>
   </body>
   </html>

@@ -143,7 +143,7 @@ body{
     /*border-bottom:5px solid orange;*/
 }
 b{
-  color:rgb(0, 79, 241);
+  color: #eb002a;
 }
 
 .title{
@@ -268,7 +268,7 @@ a:hover:after{
 .marquee-item p{
   padding-top: 5px;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 20px;
   font-family: Comic Mono;
   text-align: center;
 }
@@ -284,7 +284,7 @@ a:hover:after{
 }
 .marquee-item{
   width: 400px;
-  height: 265px;
+  height: 250px;
   display: inline-block;
   margin: 0 10px;
   float: left;
