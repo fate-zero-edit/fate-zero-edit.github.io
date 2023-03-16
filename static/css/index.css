@@ -244,14 +244,14 @@ a:hover:after{
 }
 .marquee-wrapper .marquee-block{
   --total-marquee-items:5;
-  height: 400px;
-  width: calc(420px * (var(--total-marquee-items)));
+  height: 600px;
+  width: calc(588px * (var(--total-marquee-items)));
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
   /* margin: 20px auto; */
   /* background:#1B2531; */
-  padding: 30px 0;
+  padding: 20px 0;
 }
 .marquee-inner{
   display: block;
@@ -259,10 +259,23 @@ a:hover:after{
   position: absolute;
 }
 .marquee-inner p{
+  padding-top: 5px;
   font-weight: 800;
-  font-size: 30px;
-  font-family: cursive;
+  font-size: 24px;
+  font-family: Comic Mono;
 }
+
+.marquee-item p{
+  padding-top: 5px;
+  font-weight: 800;
+  font-size: 24px;
+  font-family: Comic Mono;
+  text-align: center;
+}
+.marquee-item p > c{
+  color: #eb002a;
+}
+
 .marquee-inner.to-left{
   animation: marqueeLeft 25s linear infinite;
 }
@@ -271,12 +284,14 @@ a:hover:after{
 }
 .marquee-item{
   width: 400px;
-  height: 400px;
+  height: 265px;
   display: inline-block;
   margin: 0 10px;
   float: left;
-  transition: all .2s ease-out;
-  /* background:#00cc00; */
+  transition: all .3s ease-out;
+  background:#ececec;
+  border-bottom: orange 5px solid;
+  margin-top: 10px;
 }
 @keyframes marqueeLeft{
   0% {
@@ -293,4 +308,26 @@ a:hover:after{
   100% {
    left: 0; 
   }
+}
+
+.trdl{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.s-larger{
+  width: 600px;
+  height: 200px;
+}
+
+.s-larger-4 {
+  width: 600px;
+  height: 230px;
+}
+
+
+.s-larger d{
+  font-size: 16px;
 }
