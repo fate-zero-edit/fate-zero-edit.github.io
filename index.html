@@ -436,9 +436,9 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
           <img src="static/images/pipeline.gif" />
         </div>
         <p class="content has-text-justified">
-         <b>left, Pipeline</b>: we store all the attention amps in DDIM inversion pipeline.
-         At the editing stage of the DDIM denoising, we then fuse the attention maps with stored attention map using the proposed Attention Blending Block. 
-         <br/><br/><b>Right, Attention Blending Block</b>: First, we replace the cross-attention maps of un-edited words~(e.g., road and countryside) with source maps of them. In addition, we blend the self-attention map during inversion and editing with an adaptive spatial mask obtained from cross-attention, which represents the areas that the user wants to edit. 
+         <b>Left, Pipeline</b>: we store all the attention maps in the DDIM inversion pipeline.
+         At the editing stage of the DDIM denoising, we then fuse the attention maps with the stored attention maps using the proposed Attention Blending Block. 
+         <br/><br/><b>Right, Attention Blending Block</b>: First, we replace the cross-attention maps of un-edited words~(e.g., road and countryside) with their maps using the source prompt during inversion. As for the edited words (e.g., posche car), we blend the self-attention maps during inversion and editing with an adaptive spatial mask obtained from cross-attention, which represents the areas that the user wants to edit. 
         </p>
       </div>
     </div>
@@ -734,11 +734,11 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
 <section class="section">
   <div class="hero-body">
     <div class="container is-max-desktop content">
-    <h2 class="title">Explaination</h2>
+    <h2 class="title">Explanation</h2>
     <small>1. For better visualization, we only show the edited word in this page. Please check our paper and code for the whole source prompt. </small> <br/>
-    <small>2. Most of the results are directly edited from <a href="https://github.com/vinthony/deep-blind-watermark-removal">Stable diffusion v1.4</a>. We use one-shot video diffusion model (<a href="https://tuneavideo.github.io/">Tune-A-Video</a>) checkpoints for shape-aware editing, the results are marked as *. </small> <br/>
+    <small>2. Most of the results are directly edited from <a href="https://github.com/vinthony/deep-blind-watermark-removal">Stable diffusion v1.4</a>. We use one-shot video diffusion model (<a href="https://tuneavideo.github.io/">Tune-A-Video</a>) checkpoints for shape-aware editing, whose results are marked as *. </small> <br/>
     
-    <small>3. Our method do not require to train on the Tune-A-Video Model. </small>
+    <small>3. Our method does not require training a Tune-A-Video Model. </small>
     </div>
   </section>
 
@@ -749,7 +749,7 @@ Yet succinct, our method is the first one to show the ability of zero-shot text-
         <div class="content">
           <p>
             This page was built using the <a href="https://github.com/vinthony/project-page-template">modification version</a> of <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> from <a href="https://github.com/vinthony">vinthony</a>.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            You are free to borrow this website. We just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
